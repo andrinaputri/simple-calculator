@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+  </head>
+  <body>
+    <button type= "button" onclick="sayHello()">Click</button>
+    <form>
+      <label>Fahrenheit</label><br>
+      <input type="number" id="f" placeholder="Enter the Temperature"><br>
+      <button type="button" onclick="toCelsius()">konversi</button><br>
+      <label>Celsius</label><br>
+      <h1 id = "suhuKonversi">0</h1>
+      <label>Number 1</label><br>
+      <input type="number" id="number1" placeholder="Enter the number here"><br>
+      <label>Number 2</label><br>
+      <input type="number" id="number2" placeholder="Enter the number here"><br>
+      <button type="button" onclick="toAdd()">+</button>
+      <button type="button" onclick="toSubtract()">-</button>
+      <button type="button" onclick="toMultiply()">*</button>
+      <button type="button" onclick="toDivide()">:</button><br>
+      <label>Result</label><br>
+      <h1 id = "hasilKalkulasi">0</h1>
+    </form>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+  <script>
+    function sayHello(){
+     return alert("Hello World");
+    }
+
+    function toCelsius(){
+      let suhuFahrenheit = document.getElementById("f").value;
+      let konversi = 5/9 * (suhuFahrenheit - 32);
+      return document.getElementById("suhuKonversi").innerHTML = konversi.toFixed(2);
+    }
+
+    function toAdd() {
+      let number1 = parseFloat(document.getElementById("number1").value);
+      let number2 = parseFloat(document.getElementById("number2").value);
+      let hasil = number1 + number2;
+      document.getElementById("hasilKalkulasi").innerHTML = hasil.toFixed(2);
+    }
+    
+    function toSubtract() {
+      let number1 = parseFloat(document.getElementById("number1").value);
+      let number2 = parseFloat(document.getElementById("number2").value);
+      let hasil = number1 - number2;
+      document.getElementById("hasilKalkulasi").innerHTML = hasil.toFixed(2);
+    }
+
+    function toMultiply() {
+      let number1 = parseFloat(document.getElementById("number1").value);
+      let number2 = parseFloat(document.getElementById("number2").value);
+      let hasil = number1 * number2;
+      document.getElementById("hasilKalkulasi").innerHTML = hasil.toFixed(2);
+    }
+
+    function toDivide() {
+      let number1 = parseFloat(document.getElementById("number1").value);
+      let number2 = parseFloat(document.getElementById("number2").value);
+      let hasil = number1 / number2;
+      document.getElementById("hasilKalkulasi").innerHTML = hasil.toFixed(2);
+    }
+  </script>
+</html>
+
